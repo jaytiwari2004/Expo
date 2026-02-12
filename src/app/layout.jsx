@@ -1,0 +1,37 @@
+import { Geist, Geist_Mono } from "next/font/google";
+import "./globals.css";
+import Navbar from "@/components/Navbar";
+import SidebarButtons from "@/components/SidebarButtons";
+import Footer from "@/components/Footer";
+import ScrollToTop from "@/components/ScrollToTop";
+
+const geistSans = Geist({
+  variable: "--font-geist-sans",
+  subsets: ["latin"],
+});
+
+const geistMono = Geist_Mono({
+  variable: "--font-geist-mono",
+  subsets: ["latin"],
+});
+
+export const metadata = {
+  title: "Expo - Photography Exhibition",
+  description: "Explore stunning photography exhibitions and collections",
+};
+
+export default function RootLayout({ children }) {
+  return (
+    <html lang="en">
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+      >
+        <Navbar />
+        <SidebarButtons />
+        {children}
+        <Footer />
+        <ScrollToTop />
+      </body>
+    </html>
+  );
+}

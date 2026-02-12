@@ -1,0 +1,109 @@
+'use client';
+
+import { useEffect, useRef } from 'react';
+import Typed from 'typed.js';
+
+export default function WhatWeOffer() {
+    const typedElement = useRef(null);
+
+    useEffect(() => {
+        if (!typedElement.current) return;
+
+        const typed = new Typed(typedElement.current, {
+            strings: ['pride', 'care', 'style'],
+            typeSpeed: 60,
+            backSpeed: 40,
+            backDelay: 2000,
+            loop: true,
+            showCursor: false
+        });
+
+        return () => {
+            if (typed) typed.destroy();
+        };
+    }, []);
+
+    const services = [
+        {
+            title: "Exhibitions",
+            description: "Consectetur adipiscing",
+            image: "https://images.unsplash.com/photo-1554941068-a252680d25d9?q=80&w=2070&auto=format&fit=crop"
+        },
+        {
+            title: "Workshops",
+            description: "Consectetur adipiscing",
+            image: "https://images.unsplash.com/photo-1541123437800-1bb1317badc2?q=80&w=2070&auto=format&fit=crop"
+        },
+        {
+            title: "Contests",
+            description: "Consectetur adipiscing",
+            image: "https://images.unsplash.com/photo-1492037766660-2a56f9eb3fcb?q=80&w=2070&auto=format&fit=crop"
+        },
+        {
+            title: "Events",
+            description: "Consectetur adipiscing",
+            image: "https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?q=80&w=2070&auto=format&fit=crop"
+        }
+    ];
+
+    return (
+        <section className="bg-white pt-24 pb-0">
+            {/* Top Content */}
+            <div className="max-w-[1000px] mx-auto text-center px-6 mb-20">
+                <span className="text-xs font-bold tracking-[0.3em] text-black uppercase block mb-8">
+                    What We Offer
+                </span>
+                <h2
+                    className="text-[42px] lg:text-[54px] leading-[1.1] font-medium text-black mb-10"
+                    style={{ fontFamily: "'Roc Grotesk', sans-serif" }}
+                >
+                    Exhibitions, events and digital art experiences, crafted with brilliance, love, precision and <span className="underline decoration-1 underline-offset-8" ref={typedElement}></span>.
+                </h2>
+                <div className="space-y-1">
+                    <p className="font-bold text-sm tracking-wide">Piter Bowman</p>
+                    <p className="text-gray-500 text-[11px] uppercase tracking-[0.2em]">Creative Director</p>
+                </div>
+            </div>
+
+            {/* Services Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 w-full">
+                {services.map((service, index) => (
+                    <div
+                        key={service.title}
+                        className="relative h-[480px] overflow-hidden group cursor-pointer border-r border-white/20 last:border-r-0"
+                    >
+                        {/* Image */}
+                        <img
+                            src={service.image}
+                            alt={service.title}
+                            className="w-full h-full object-cover grayscale brightness-[0.7] group-hover:grayscale-0 transition-all duration-700"
+                        />
+
+                        {/* Red Overlay on Hover (Lighter Red) */}
+                        <div className="absolute inset-0 bg-[#802121]/60 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10"></div>
+
+                        {/* Text Overlay - Moves up on hover */}
+                        <div className="absolute bottom-6 left-10 text-white z-20 transition-transform duration-300 group-hover:-translate-y-4">
+                            <h3
+                                className="text-[32px] font-bold mb-2 leading-tight"
+                                style={{ fontFamily: "'Roc Grotesk', sans-serif" }}
+                            >
+                                {service.title}
+                            </h3>
+                            <p className="text-[14px] opacity-80 font-medium mb-6">
+                                {service.description}
+                            </p>
+
+                            {/* Arrow Icon */}
+                            <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                    <path d="M5 12h14M12 5l7 7-7 7" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                ))}
+            </div>
+        </section >
+    );
+}

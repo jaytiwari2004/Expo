@@ -1,3 +1,13 @@
+@import url('https://use.typekit.net/af/4838bd/00000000000000007735a1bd/30/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n9&v=3');
+
+@font-face {
+  font-family: 'Roc Grotesk';
+  src: url('https://use.typekit.net/af/4838bd/00000000000000007735a1bd/30/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n9&v=3') format('woff2');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
 @import "tailwindcss";
 
 :root {
