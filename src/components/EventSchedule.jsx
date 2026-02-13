@@ -43,19 +43,25 @@ export default function EventSchedule() {
     ];
 
     return (
-        <section className="bg-transparent py-20 px-6 lg:px-12 border-t border-gray-200 relative">
+        <section className="bg-transparent py-20 px-6 lg:px-12 relative">
             <div className="max-w-[1400px] mx-auto relative z-10">
                 {/* Header */}
                 <div className="flex justify-between items-start mb-8">
                     <h2
-                        className="text-[48px] lg:text-[64px] font-medium text-black leading-none"
-                        style={{ fontFamily: "'Roc Grotesk', sans-serif" }}
+                        className="mb-0"
+                        style={{
+                            fontFamily: "'sans-serif', 'Roc Grotesk'",
+                            fontWeight: '500',
+                            fontSize: '57px',
+                            lineHeight: '61px',
+                            color: 'rgb(255, 255, 255)'
+                        }}
                     >
                         Event Schedule
                     </h2>
                     <Link
                         href="#"
-                        className="text-black text-sm font-medium tracking-wide flex items-center gap-2 hover:gap-4 transition-all mt-4"
+                        className="text-white text-sm font-medium tracking-wide flex items-center gap-2 hover:gap-4 transition-all mt-4"
                     >
                         View More
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -65,14 +71,14 @@ export default function EventSchedule() {
                 </div>
 
                 {/* Date Tabs */}
-                <div className="flex gap-8 mb-8 border-b border-gray-200 pb-4">
-                    <button className="text-black text-sm font-medium tracking-wide border-b-2 border-black pb-2">
+                <div className="flex gap-8 mb-8 border-b border-white/20 pb-4">
+                    <button className="text-[#7a8208] text-sm font-medium tracking-wide pb-2">
                         Day #1 - may 01.2021
                     </button>
-                    <button className="text-gray-400 text-sm font-medium tracking-wide hover:text-black transition-colors">
+                    <button className="text-white/60 text-sm font-medium tracking-wide hover:text-white transition-colors">
                         Day #2 - may 02.2021
                     </button>
-                    <button className="text-gray-400 text-sm font-medium tracking-wide hover:text-black transition-colors">
+                    <button className="text-white/60 text-sm font-medium tracking-wide hover:text-white transition-colors">
                         Day #3 - may 03.2021
                     </button>
                 </div>
@@ -82,34 +88,34 @@ export default function EventSchedule() {
                     {events.map((event, index) => (
                         <div
                             key={index}
-                            className="grid grid-cols-1 md:grid-cols-12 gap-4 py-6 border-b border-gray-200 group hover:bg-gray-50 transition-all cursor-pointer px-4 -mx-4"
+                            className="grid grid-cols-1 md:grid-cols-12 gap-4 py-6 border-b border-white/20 group hover:bg-white/10 transition-all cursor-pointer px-4 -mx-4"
                         >
                             {/* Time */}
                             <div className="md:col-span-2 flex items-start">
                                 <div>
-                                    <div className="text-black text-lg font-medium">{event.time}</div>
-                                    <div className="text-gray-500 text-xs">{event.period}</div>
+                                    <div className="text-white text-lg font-medium">{event.time}</div>
+                                    <div className="text-white/60 text-xs">{event.period}</div>
                                 </div>
                             </div>
 
                             {/* Event Title */}
                             <div className="md:col-span-4 flex items-center">
-                                <h3 className="text-black text-lg font-medium">{event.title}</h3>
+                                <h3 className="text-white text-lg font-medium">{event.title}</h3>
                             </div>
 
                             {/* Guide */}
                             <div className="md:col-span-2 flex items-start">
                                 <div>
-                                    <div className="text-black text-base font-medium">{event.guide}</div>
-                                    <div className="text-gray-500 text-xs uppercase tracking-wider">{event.guideRole}</div>
+                                    <div className="text-white text-base font-medium">{event.guide}</div>
+                                    <div className="text-white/60 text-xs uppercase tracking-wider">{event.guideRole}</div>
                                 </div>
                             </div>
 
                             {/* Location */}
                             <div className="md:col-span-3 flex items-start">
                                 <div>
-                                    <div className="text-black text-base font-medium">{event.location}</div>
-                                    <div className="text-gray-500 text-xs">{event.venue}</div>
+                                    <div className="text-white text-base font-medium">{event.location}</div>
+                                    <div className="text-white/60 text-xs">{event.venue}</div>
                                 </div>
                             </div>
 
@@ -120,7 +126,7 @@ export default function EventSchedule() {
                                     height="24"
                                     viewBox="0 0 24 24"
                                     fill="none"
-                                    stroke="black"
+                                    stroke="white"
                                     strokeWidth="2"
                                     className="group-hover:translate-x-2 transition-transform"
                                 >

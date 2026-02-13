@@ -17,16 +17,17 @@ export default function ExpoEventSection() {
 
     return (
         <section ref={ref} className="relative bg-white overflow-hidden">
+
             {/* Sticky Background Container */}
-            <div className="absolute inset-0 h-full w-full pointer-events-none">
-                <div className="sticky top-0 h-screen overflow-hidden">
+            <div className="absolute inset-0 h-full w-full pointer-events-none z-[5]">
+                <div className="sticky top-0 h-screen">
                     {/* Balloon & Button Container - Positioned to match Expo Header (Right side) */}
                     <div className="absolute top-32 lg:top-56 right-6 lg:right-12 w-20 h-20 flex items-center justify-center">
 
                         {/* The Balloon (Scales Up) */}
                         <motion.div
                             style={{ scale }}
-                            className="absolute inset-0 w-full h-full bg-[#802121] rounded-full z-0 origin-center"
+                            className="absolute inset-0 w-full h-full bg-[#802121] rounded-full origin-center"
                         />
 
                         {/* The Arrow Button (Stays Visible) */}

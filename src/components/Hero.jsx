@@ -1,5 +1,7 @@
 'use client';
 
+import { motion } from 'framer-motion';
+
 export default function Hero() {
     return (
         <section className="relative h-[120vh] w-full overflow-hidden">
@@ -19,16 +21,17 @@ export default function Hero() {
             </div>
 
             {/* Content */}
-            <div className="relative z-10 h-full flex items-center">
+            <div className="relative z-10 h-full flex items-center ">
                 <div className="max-w-[1400px] mx-auto px-6 lg:px-12 w-full">
-                    <div className="flex items-start justify-between">
+                    <div className="flex items-start justify-between relative">
                         {/* Left Side - Main Heading */}
-                        <div className="flex-1">
+                        <div>
                             <h1 className="text-white">
                                 <span
-                                    className="block"
+                                    className="block ml-[140px]"
+
                                     style={{
-                                        fontFamily: "'Roc Grotesk', sans-serif",
+                                        fontFamily: "'Roc Grotesk'",
                                         fontSize: '146px',
                                         fontWeight: '500',
                                         lineHeight: '142px',
@@ -37,12 +40,33 @@ export default function Hero() {
                                 >
                                     Unique
                                 </span>
-                                <div className="flex items-center gap-6">
-                                    <span className="text-[60px] lg:text-[80px]">→</span>
+                                <div className="flex items-center gap-[100px] ml-[280px]">
+                                    <div className="flex flex-col -space-y-[30px] leading-none">
+                                        <motion.span
+                                            className="text-[80px] lg:text-[100px] leading-[0.6]"
+                                            animate={{ x: [0, 60, 60, 0, 0] }}
+                                            transition={{
+                                                duration: 4,
+                                                times: [0, 0.3, 0.5, 0.8, 1],
+                                                repeat: Infinity,
+                                                ease: "easeInOut",
+                                            }}
+                                        >→</motion.span>
+                                        <motion.span
+                                            className="text-[80px] lg:text-[100px] leading-[0.5] ml-[5px] "
+                                            animate={{ x: [60, 0, 0, 60, 60] }}
+                                            transition={{
+                                                duration: 4,
+                                                times: [0, 0.3, 0.5, 0.8, 1],
+                                                repeat: Infinity,
+                                                ease: "easeInOut",
+                                            }}
+                                        >→</motion.span>
+                                    </div>
                                     <span
                                         className="block"
                                         style={{
-                                            fontFamily: "'Roc Grotesk', sans-serif",
+                                            fontFamily: "'Roc Grotesk'",
                                             fontSize: '146px',
                                             fontWeight: '500',
                                             lineHeight: '142px',
@@ -53,9 +77,9 @@ export default function Hero() {
                                     </span>
                                 </div>
                                 <span
-                                    className="block"
+                                    className="block ml-[150px]"
                                     style={{
-                                        fontFamily: "'Roc Grotesk', sans-serif",
+                                        fontFamily: "'Roc Grotesk'",
                                         fontSize: '146px',
                                         fontWeight: '500',
                                         lineHeight: '142px',
@@ -64,18 +88,24 @@ export default function Hero() {
                                 >
                                     Photography
                                 </span>
+
                             </h1>
                         </div>
 
                         {/* Right Side - Date & Location */}
-                        <div className="hidden lg:block text-white text-right">
-                            <p className="text-[16px] font-medium tracking-wide mb-2">
+                        <div
+                            className="hidden lg:block text-white absolute left-[900px] top-[20px]"
+                            style={{ fontFamily: "'Roc Grotesk'" }}
+                        >
+                            <p className="text-[23px] font-medium tracking-wide mb-2">
                                 8 JUNE – 15 AUGUST 2022
                             </p>
-                            <p className="text-[16px] font-bold tracking-wide">
+                            <p className="text-[23px] font-bold tracking-wide">
                                 LONDON, UK
                             </p>
                         </div>
+
+
                     </div>
                 </div>
             </div>

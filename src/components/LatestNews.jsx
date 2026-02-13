@@ -1,8 +1,10 @@
 'use client';
 
 import Link from 'next/link';
+import { useEffect, useRef } from 'react';
 
 export default function LatestNews() {
+    const scrollRef = useRef(null);
     const newsItems = [
         {
             title: "Why using scale in nature photography is so important",
@@ -42,24 +44,41 @@ export default function LatestNews() {
         }
     ];
 
+    useEffect(() => {
+        const scrollContainer = scrollRef.current;
+        if (!scrollContainer) return;
+
+        const scroll = () => {
+            if (scrollContainer.scrollLeft + scrollContainer.clientWidth >= scrollContainer.scrollWidth - 10) {
+                scrollContainer.scrollTo({ left: 0, behavior: 'smooth' });
+            } else {
+                scrollContainer.scrollBy({ left: 350, behavior: 'smooth' });
+            }
+        };
+
+        const intervalId = setInterval(scroll, 5000);
+        return () => clearInterval(intervalId);
+    }, []);
+
     return (
         <section className="py-20 bg-white overflow-hidden">
             <div className="max-w-[1600px] mx-auto px-6 lg:px-12">
                 <h2
                     className="text-[45px] md:text-[70px] font-bold text-center mb-12 tracking-tight text-black"
-                    style={{ fontFamily: "'Roc Grotesk', sans-serif" }}
+                    style={{ fontFamily: "' sans-serif', Roc Grotesk" }}
                 >
                     Latest News
                 </h2>
 
                 <div
+                    ref={scrollRef}
                     className="flex overflow-x-auto pb-8 gap-6 snap-x snap-mandatory scrollbar-hide -mx-6 px-6 lg:-mx-12 lg:px-12 hover:cursor-grab active:cursor-grabbing"
                     style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
                 >
                     {newsItems.map((item, index) => (
                         <div
                             key={index}
-                            className="min-w-[240px] max-w-[240px] md:min-w-[260px] md:max-w-[260px] snap-start group flex-shrink-0"
+                            className="min-w-[300px] max-w-[300px] md:min-w-[350px] md:max-w-[350px] snap-start group flex-shrink-0"
                         >
                             <Link href="#" className="block">
                                 {/* Image Container */}
@@ -78,7 +97,7 @@ export default function LatestNews() {
                                     </div>
                                     <h3
                                         className="text-[18px] leading-[1.3] font-bold text-black group-hover:text-gray-600 transition-colors"
-                                        style={{ fontFamily: "'Roc Grotesk', sans-serif" }}
+                                        style={{ fontFamily: "' sans-serif', Roc Grotesk" }}
                                     >
                                         {item.title}
                                     </h3>

@@ -57,12 +57,12 @@ export default function GalleryMasonry() {
 
     return (
         <section className="bg-transparent py-32 px-0 relative">
-            <div className="max-w-[1600px] mx-auto relative z-10">
+            <div className="max-w-[1600px] mx-auto relative">
                 {/* Expo Header */}
                 <div className="px-6 lg:px-12 mb-40 flex items-end justify-between">
                     <h2
                         className="text-[180px] lg:text-[260px] font-black text-black leading-none tracking-tighter"
-                        style={{ fontFamily: "'Roc Grotesk', sans-serif" }}
+                        style={{ fontFamily: "' sans-serif', Roc Grotesk" }}
                     >
                         Expo
                     </h2>
