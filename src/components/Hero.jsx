@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 
 export default function Hero() {
     return (
-        <section className="relative h-[120vh] w-full overflow-hidden">
+        <section className="relative h-[100dvh] w-full overflow-hidden bg-black">
             {/* Video Background */}
             <div className="absolute inset-0 w-full h-full">
                 <video
@@ -12,7 +12,7 @@ export default function Hero() {
                     loop
                     muted
                     playsInline
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover opacity-80"
                 >
                     <source src="/hero expo vedio.mp4" type="video/mp4" />
                 </video>
@@ -21,106 +21,102 @@ export default function Hero() {
             </div>
 
             {/* Content */}
-            <div className="relative z-10 h-full flex items-center ">
-                <div className="max-w-[1400px] mx-auto px-6 lg:px-12 w-full">
-                    <div className="flex items-start justify-between relative">
-                        {/* Left Side - Main Heading */}
-                        <div>
-                            <h1 className="text-white">
-                                <span
-                                    className="block ml-[140px]"
-
-                                    style={{
-                                        fontFamily: "'Roc Grotesk'",
-                                        fontSize: '146px',
-                                        fontWeight: '500',
-                                        lineHeight: '142px',
-                                        color: 'rgb(255, 255, 255)'
-                                    }}
-                                >
-                                    Unique
-                                </span>
-                                <div className="flex items-center gap-[100px] ml-[280px]">
-                                    <div className="flex flex-col -space-y-[30px] leading-none">
-                                        <motion.span
-                                            className="text-[80px] lg:text-[100px] leading-[0.6]"
-                                            animate={{ x: [0, 60, 60, 0, 0] }}
-                                            transition={{
-                                                duration: 4,
-                                                times: [0, 0.3, 0.5, 0.8, 1],
-                                                repeat: Infinity,
-                                                ease: "easeInOut",
-                                            }}
-                                        >→</motion.span>
-                                        <motion.span
-                                            className="text-[80px] lg:text-[100px] leading-[0.5] ml-[5px] "
-                                            animate={{ x: [60, 0, 0, 60, 60] }}
-                                            transition={{
-                                                duration: 4,
-                                                times: [0, 0.3, 0.5, 0.8, 1],
-                                                repeat: Infinity,
-                                                ease: "easeInOut",
-                                            }}
-                                        >→</motion.span>
-                                    </div>
-                                    <span
-                                        className="block"
-                                        style={{
-                                            fontFamily: "'Roc Grotesk'",
-                                            fontSize: '146px',
-                                            fontWeight: '500',
-                                            lineHeight: '142px',
-                                            color: 'rgb(255, 255, 255)'
-                                        }}
-                                    >
-                                        Exhibition
-                                    </span>
-                                </div>
-                                <span
-                                    className="block ml-[150px]"
-                                    style={{
-                                        fontFamily: "'Roc Grotesk'",
-                                        fontSize: '146px',
-                                        fontWeight: '500',
-                                        lineHeight: '142px',
-                                        color: 'rgb(255, 255, 255)'
-                                    }}
-                                >
-                                    Photography
-                                </span>
-
-                            </h1>
-                        </div>
-
-                        {/* Right Side - Date & Location */}
-                        <div
-                            className="hidden lg:block text-white absolute left-[900px] top-[20px]"
-                            style={{ fontFamily: "'Roc Grotesk'" }}
+            <div className="relative z-10 h-full flex flex-col justify-center">
+                <div className="max-w-[1700px] mx-auto px-4 sm:px-6 lg:px-12 w-full">
+                    <div className="flex flex-col relative text-white">
+                        {/* Unique */}
+                        <motion.h1
+                            initial={{ opacity: 0, y: 50 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.8, ease: "easeOut" }}
+                            className="text-[14vw] sm:text-[12vw] md:text-[130px] lg:text-[146px] font-medium leading-[0.9] tracking-tight ml-[2vw] md:ml-[140px]"
+                            style={{ fontFamily: "'Roc Grotesk', sans-serif" }}
                         >
-                            <p className="text-[23px] font-medium tracking-wide mb-2">
-                                8 JUNE – 15 AUGUST 2022
-                            </p>
-                            <p className="text-[23px] font-bold tracking-wide">
-                                LONDON, UK
-                            </p>
+                            Unique
+                        </motion.h1>
+
+                        {/* Middle Row: Arrows + Exhibition */}
+                        <div className="flex items-center gap-4 sm:gap-8 md:gap-[60px] lg:gap-[100px] ml-[8vw] md:ml-[180px] lg:ml-[280px] mt-2 md:mt-0">
+                            {/* Animated Arrows */}
+                            <div className="flex flex-col -space-y-3 sm:-space-y-4 md:-space-y-[30px] leading-none shrink-0 pt-2">
+                                <motion.span
+                                    className="text-[9vw] sm:text-[50px] md:text-[80px] lg:text-[100px] leading-[0.6] text-white"
+                                    animate={{ x: [0, 30, 30, 0, 0] }}
+                                    transition={{
+                                        duration: 4,
+                                        times: [0, 0.3, 0.5, 0.8, 1],
+                                        repeat: Infinity,
+                                        ease: "easeInOut",
+                                    }}
+                                >→</motion.span>
+                                <motion.span
+                                    className="text-[9vw] sm:text-[50px] md:text-[80px] lg:text-[100px] leading-[0.6] ml-3 md:ml-[5px] text-white"
+                                    animate={{ x: [30, 0, 0, 30, 30] }}
+                                    transition={{
+                                        duration: 4,
+                                        times: [0, 0.3, 0.5, 0.8, 1],
+                                        repeat: Infinity,
+                                        ease: "easeInOut",
+                                    }}
+                                >→</motion.span>
+                            </div>
+
+                            <motion.h1
+                                initial={{ opacity: 0, y: 50 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+                                className="text-[14vw] sm:text-[12vw] md:text-[130px] lg:text-[146px] font-medium leading-[0.9] tracking-tight"
+                                style={{ fontFamily: "'Roc Grotesk', sans-serif" }}
+                            >
+                                Exhibition
+                            </motion.h1>
                         </div>
 
-
+                        {/* Photography */}
+                        <motion.h1
+                            initial={{ opacity: 0, y: 50 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
+                            className="text-[14vw] sm:text-[12vw] md:text-[130px] lg:text-[146px] font-medium leading-[0.9] tracking-tight ml-[12vw] md:ml-[150px] mt-2 md:mt-0"
+                            style={{ fontFamily: "'Roc Grotesk', sans-serif" }}
+                        >
+                            Photography
+                        </motion.h1>
                     </div>
+
+                    {/* Desktop Date & Location */}
+                    <motion.div
+                        initial={{ opacity: 0, x: 50 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.8, delay: 0.6 }}
+                        className="hidden lg:block text-white absolute right-12 top-0 mt-8"
+                        style={{ fontFamily: "'Roc Grotesk', sans-serif" }}
+                    >
+                        <p className="text-[23px] font-medium tracking-wide mb-2">
+                            8 JUNE – 15 AUGUST 2022
+                        </p>
+                        <p className="text-[23px] font-bold tracking-wide text-right">
+                            LONDON, UK
+                        </p>
+                    </motion.div>
                 </div>
             </div>
 
-
-
             {/* Mobile Date & Location */}
-            <div className="lg:hidden absolute bottom-12 left-0 right-0 z-10 text-white text-center px-6">
-                <p className="text-[14px] font-medium tracking-wide mb-1">
+            <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.8 }}
+                className="lg:hidden absolute bottom-24 left-6 z-10 text-white"
+            >
+                <div className="w-12 h-[2px] bg-white/50 mb-4"></div>
+                <p className="text-[16px] font-medium tracking-wide mb-1 opacity-90">
                     8 JUNE – 15 AUGUST 2022
                 </p>
-                <p className="text-[14px] font-bold tracking-wide">
+                <p className="text-[18px] font-bold tracking-wide">
                     LONDON, UK
                 </p>
-            </div>
+            </motion.div>
         </section>
     );
 }

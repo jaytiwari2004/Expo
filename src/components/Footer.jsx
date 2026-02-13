@@ -89,10 +89,22 @@ export default function Footer() {
                                     </button>
                                 </div>
                             </div>
-                            <label className="flex items-start gap-3 cursor-pointer group">
-                                <div className="relative mt-1">
+                            <label className="flex items-start gap-3 cursor-pointer group select-none">
+                                <div className="relative mt-1 w-4 h-4">
                                     <input type="checkbox" className="peer sr-only" />
-                                    <div className="w-4 h-4 border border-gray-700 rounded-sm peer-checked:bg-white transition-all"></div>
+                                    <div className="absolute inset-0 border border-gray-700 rounded-sm peer-checked:bg-white transition-all"></div>
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        strokeWidth="4"
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
+                                        className="absolute inset-0 m-auto w-3 h-3 text-black opacity-0 peer-checked:opacity-100 transition-opacity"
+                                    >
+                                        <polyline points="20 6 9 17 4 12"></polyline>
+                                    </svg>
                                 </div>
                                 <span className="text-gray-500 text-[13px] leading-tight">
                                     I agree to the <Link href="#" className="underline underline-offset-2 hover:text-gray-300">Privacy Policy</Link>.
